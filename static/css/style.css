@@ -1,3 +1,26 @@
+body{
+    background-color:#323232;
+}
+
 .large {
     padding-top: 50px;
+}
+
+nav {
+    
+    background-color: black;
+}
+
+
+nav ul a:hover {
+    background-color: #323232;
+}
+
+
+.games-title{
+    color:white;
+}
+
+.select-wrapper input.select-dropdown {
+    color: white;
     }
