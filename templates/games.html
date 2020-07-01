@@ -1,29 +1,58 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% block content %}
 
-{% for game in games %}
-{{game.game_name}}
-{{game.genre_name}}
-{{game.pickup_date}}
-{{game.platform_name}}
-{{game.rating}}
 
 
 <div class="container">
     <div class="row">
-        <div class="col s12">
-            <h1>Your game collection:</h1>
+
+        <div class="col s12 m12 l12 center title-games">
+            <h1>Your Loot</h1>
         </div>
-        <div class="col s6">{{game.game_name}}
-            {{game.genre_name}}
-            {{game.pickup_date}}
-            {{game.platform_name}}
-            {{game.rating}}</div>
-        <div class="col s6">More details</div>
-        
     </div>
 
+    <div class="row search-bar">
+        <div class="input-field col s12 m4 l4 center">
+            <select>
+                <option value="" disabled selected>Platform</option>
+                {% for plat in platforms %}
+                <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
+                {%endfor%}
+            </select>
+            <label>Platform</label>
+        </div>
+
+        <div class="input-field col s12 m4 l4 center">
+            <select>
+                <option value="" disabled selected>Platform</option>
+                {% for genre in genres %}
+                <option value="{{genre.genre_name}}">{{genre.genre_name}}</option>
+                {%endfor%}
+            </select>
+            <label>Genre</label>
+        </div>
+        <div class="col s12 m4 l4 center">
+            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+    </div>
+
+    <div class="row games-row">
+        {% for game in games %}
+        <div class="col s12 m4 l4 center">
+            <img class="responsive-img" src="{{game.game_image}}" alt="" width="200" height="200">
+            <div class="game-description">
+                {{game.game_name}}
+                {{game.genre_name}}
+                {{game.pickup_date}}
+                {{game.platform_name}}
+                {{game.rating}}
+            </div>
+        </div>
+
+        {%endfor%}
+    </div>
 </div>
 
-{%endfor%}
+
+
 {% endblock %}

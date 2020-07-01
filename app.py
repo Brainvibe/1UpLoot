@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_games')
 def get_games():
-    return render_template("games.html", games=mongo.db.games.find())
+    return render_template("games.html", games=mongo.db.games.find(), genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
 
 
 if __name__ == '__main__':
