@@ -1,4 +1,4 @@
-{% extends 'index.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container">
     <div class="row">
@@ -21,7 +21,7 @@
 
         <div class="input-field col s12 m4 l4 center">
             <select>
-                <option value="" disabled selected>Platform</option>
+                <option value="" disabled selected>Genre</option>
                 {% for genre in genres %}
                 <option value="{{genre.genre_name}}">{{genre.genre_name}}</option>
                 {%endfor%}

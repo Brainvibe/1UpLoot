@@ -15,9 +15,18 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 mongo = PyMongo(app)
 
 @app.route('/')
+def index():
+    return render_template("index.html")
+
 @app.route('/get_games')
 def get_games():
     return render_template("games.html", games=mongo.db.games.find(), genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
+
+@app.route('/add_games')
+def add_games():
+    return render_template("addgame.html")
+
+
 
 
 if __name__ == '__main__':
