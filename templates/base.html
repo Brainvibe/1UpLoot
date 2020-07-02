@@ -26,6 +26,7 @@
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('index')}}">Home</a></li>
                 <li><a href="{{url_for('index')}}">About</a></li>
                 <li><a href="{{url_for('get_games')}}">Loot</a></li>
                 <li><a href="collapsible.html">Login</a></li>
@@ -35,11 +36,11 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">About</a></li>
-        <li><a href="badges.html">Loot</a></li>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('index')}}">About</a></li>
+        <li><a href="{{url_for('get_games')}}">Loot</a></li>
         <li><a href="collapsible.html">Login</a></li>
         <li><a href="mobile.html">Register</a></li>
-
 
 
     </ul>

@@ -1,23 +1,31 @@
-/*** centering plus sign in games.html ***/
-.large {
-    padding-top: 50px;
-}
-
+/********INDEX PAGE *******/
 /*** Nav properties ***/
 nav {
-    
     background-color: black;
-   
 }
-
 
 nav ul a:hover {
     background-color: #323232;
 }
 
-
 nav .brand-logo {
     font-size: 20px;
     padding-left: 30px;
+}
 
-    }
+/*****************GAMES PAGE****************/
+/*** centering plus sign in games.html ***/
+.large {
+    padding-top: 50px;
+}
+
+/************ADD GAMES PAGE*************/
+form.col>div:nth-child(1) {
+    padding-bottom: 19px;
+    padding-top: 20px;
+}
+
+
+.switch label input[type=checkbox]:checked + .lever:after {
+    background-color: red; 
+  }

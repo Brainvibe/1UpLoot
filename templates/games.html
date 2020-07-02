@@ -29,7 +29,8 @@
             <label>Genre</label>
         </div>
         <div class="col s12 m4 l4 center">
-            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <a href="{{url_for('add_games')}}"class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            
         </div>
     </div>
 
@@ -39,10 +40,7 @@
             <img class="responsive-img" src="{{game.game_image}}" alt="" width="200" height="200">
             <div class="game-description">
                 {{game.game_name}}
-                {{game.genre_name}}
-                {{game.pickup_date}}
-                {{game.platform_name}}
-                {{game.rating}}
+                
             </div>
         </div>
 

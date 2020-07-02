@@ -24,10 +24,13 @@ def get_games():
 
 @app.route('/add_games')
 def add_games():
-    return render_template("addgame.html")
+    return render_template("addgame.html",genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
 
-
-
+@app.route('/insert_game', methods=['POST'])
+def insert_game():
+    games = mongo.db.games
+    games.insert_one(request.form.to_dict())
+    return redirect(url_for('get_games'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
