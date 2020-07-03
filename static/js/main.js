@@ -6,4 +6,6 @@ $(document).ready(function () {
     $('.datepicker').datepicker();
 });
 
-        
+
+//form validation
+

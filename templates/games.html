@@ -29,8 +29,9 @@
             <label>Genre</label>
         </div>
         <div class="col s12 m4 l4 center">
-            <a href="{{url_for('add_games')}}"class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-            
+            <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light red"><i
+                    class="material-icons">add</i></a>
+
         </div>
     </div>
 
@@ -39,11 +40,18 @@
         <div class="col s12 m4 l4 center">
             <img class="responsive-img" src="{{game.game_image}}" alt="" width="200" height="200">
             <div class="game-description">
-                {{game.game_name}}
-                
+                <strong><p>{{game.game_name}}</p></strong>
+
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l6 center">
+                    <a  href="{{url_for('edit_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                </div>
+                <div class="col s12 m6 l6 center">
+                    <a class="waves-effect waves-light btn btn_small red">Delete</a>
+                </div>
             </div>
         </div>
-
         {%endfor%}
     </div>
 </div>

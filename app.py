@@ -39,6 +39,23 @@ def edit_game(game_id):
     platforms=mongo.db.platforms.find()
     return render_template('editgame.html', game=game_edit, genre=genres, plat=platforms)
 
+@app.route('/update_game/<game_id>', methods=["POST"])
+def update_game(game_id):
+    games = mongo.db.games
+    games.update( {'_id': ObjectId(game_id)},
+    {
+        'game_name':request.form.get('game_name'),
+        'game_image':request.form.get('game_image'),
+        'game_condition':request.form.get('game_condition'),
+        'pickup_date':request.form.get('pickup_date'),
+        'platform_name':request.form.get('platform_name'),
+        'genre_name':request.form.get('genre_name')
+
+    })
+    return redirect(url_for('get_games'))
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
          port=os.environ.get('PORT'),
