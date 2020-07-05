@@ -7,17 +7,17 @@
             <div class="row">
                 <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix">videogame_asset</i>
-                    <input id="game_name" name="game_name" type="text" required>
+                    <input id="game_name" name="game_name" type="text" value="{{game.game_name}} required>
                     <label for="icon_prefix">Game Name</label>
                 </div>
                 <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix">image</i>
-                    <input id="game_image" name="game_image" type="url" class="validate" required>
+                    <input id="game_image" name="game_image" type="url" class="validate" value="{{game.game_image}}" required>
                     <label for="icon_prefix">Image Url(200x200)</label>
                 </div>
                 <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix">today</i>
-                    <input id="pickup_date" name="pickup_date" type="text" class="datepicker validate" required>
+                    <input id="pickup_date" name="pickup_date" type="text" class="datepicker validate" value="{{game.pickup_date}}" required>
                     <label for="icon_prefix">Pickup date</label>
                 </div>
             </div>
