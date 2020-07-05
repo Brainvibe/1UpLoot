@@ -13,6 +13,25 @@ nav .brand-logo {
     padding-left: 30px;
 }
 
+.title-games{
+color:white;
+font-size: 20px;
+}
+
+
+.main-container{
+    
+    background: url('../images/gray-scale-image-of-xbox-game-controller-194511.jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+}
+.promo-section{
+    
+ 
+}
+
+
+
 /*****************GAMES PAGE****************/
 /*** centering plus sign in games.html ***/
 .large {

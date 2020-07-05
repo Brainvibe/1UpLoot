@@ -7,54 +7,64 @@
             <h1 class="games-title">Your Loot</h1>
         </div>
     </div>
+  
+        <div class="row search-bar">
+            <div class="input-field col s12 m4 l4 center">
+                <select>
+                    <option value="" disabled selected>Platform</option>
+                    {% for plat in platforms %}
+                    <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
+                    {%endfor%}
+                </select>
+                <label>Platform</label>
+            </div>
 
-    <div class="row search-bar">
-        <div class="input-field col s12 m4 l4 center">
-            <select>
-                <option value="" disabled selected>Platform</option>
-                {% for plat in platforms %}
-                <option value="{{plat.platform_name}}">{{plat.platform_name}}</option>
-                {%endfor%}
-            </select>
-            <label>Platform</label>
-        </div>
-
-        <div class="input-field col s12 m4 l4 center">
-            <select>
-                <option value="" disabled selected>Genre</option>
-                {% for genre in genres %}
-                <option value="{{genre.genre_name}}">{{genre.genre_name}}</option>
-                {%endfor%}
-            </select>
-            <label>Genre</label>
-        </div>
-        <div class="col s12 m4 l4 center">
-            <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light red"><i
-                    class="material-icons">add</i></a>
-
-        </div>
-    </div>
-
-    <div class="row games-row">
-        {% for game in games %}
-        <div class="col s12 m4 l4 center">
-            <img class="responsive-img" src="{{game.game_image}}" alt="" width="200" height="200">
-            <div class="game-description">
-                <strong><p>{{game.game_name}}</p></strong>
+            <div class="input-field col s12 m4 l4 center">
+                <select id="genre_name" name="genre_name">
+                    <option value="" disabled selected>Genre</option>
+                    {% for genre in genres %}
+                    <option value="{{genre.genre_name}}">{{genre.genre_name}}</option>
+                    {%endfor%}
+                </select>
+                <label>Genre</label>
 
             </div>
-            <div class="row">
-                <div class="col s12 m6 l6 center">
-                    <a  href="{{url_for('edit_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                </div>
-                <div class="col s12 m6 l6 center">
-                    <a href="{{url_for('delete_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
-                </div>
+            <div class="col s12 m4 l4 center">
+                <a class="btn-floating btn-large waves-effect waves-light red"type="submit" name="action"><i class="material-icons">search</i></a>
             </div>
-        </div>
-        {%endfor%}
+    </form>
+
+    <div class="col s12 m4 l4 center">
+        <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light red"><i
+                class="material-icons">add</i></a>
+
     </div>
 </div>
+
+<div class="row games-row">
+    {% for game in games %}
+    <div class="col s12 m4 l4 center">
+        <img class="responsive-img" src="{{game.game_image}}" alt="" width="200" height="200">
+        <div class="game-description">
+            <strong>
+                <p>{{game.game_name}}</p>
+            </strong>
+
+        </div>
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <a href="{{url_for('edit_game', game_id=game._id)}}"
+                    class="waves-effect waves-light btn btn_small orange"><i class="material-icons">edit</i></a>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <a href="{{url_for('delete_game', game_id=game._id)}}"
+                    class="waves-effect waves-light btn btn_small orange"><i class="material-icons">delete</i></a>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
 
 
 
