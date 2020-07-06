@@ -7,6 +7,10 @@
     <title>1UP Loot</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
@@ -19,22 +23,21 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Game
-                <img src="{{url_for('static', filename='images/logo.png')}}" weight="45" height="45" alt="">
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{url_for('index')}}">Home</a></li>
-                <li><a href="{{url_for('index')}}">About</a></li>
-                <li><a href="{{url_for('get_games')}}">Loot</a></li>
-                <li><a href="collapsible.html">Login</a></li>
-                <li><a href="mobile.html">Register</a></li>
-            </ul>
-        </div>
-    </nav>
-
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Game Loot </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('index')}}">About</a></li>
+                    <li><a href="{{url_for('get_games')}}">Loot</a></li>
+                    <li><a href="collapsible.html">Login</a></li>
+                    <li><a href="mobile.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <ul class="sidenav" id="mobile-demo">
         <li><a href="{{url_for('index')}}">Home</a></li>
         <li><a href="{{url_for('index')}}">About</a></li>
@@ -46,8 +49,8 @@
     </ul>
 
 
- 
-        {% block content %} {% endblock %}
+
+    {% block content %} {% endblock %}
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

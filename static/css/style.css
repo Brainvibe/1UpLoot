@@ -1,27 +1,38 @@
 /********INDEX PAGE *******/
 /*** Nav properties ***/
-nav {
-    background-color: black;
+body{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
+
+nav {
+    background-color: black;
+    font-family: 'Open Sans Condensed', sans-serif;
+   
+}
+nav ul a {
+    font-size: 20px;
+    }
 nav ul a:hover {
     background-color: #323232;
 }
 
 nav .brand-logo {
-    font-size: 20px;
-    padding-left: 30px;
+    font-size: 35px;
+    padding-left: 25px;
+    font-family: 'Covered By Your Grace', cursive;
 }
 
-.title-games{
-color:white;
-font-size: 20px;
+.title{
+color:black;
+font-size: 30px;
+
 }
 
 
 .main-container{
-    
-    background: url('../images/gray-scale-image-of-xbox-game-controller-194511.jpg') no-repeat center center fixed;
+    height:50vw;
+    background: url('../images/main.jpg') no-repeat center center fixed;
     background-size: cover;
     
 }
