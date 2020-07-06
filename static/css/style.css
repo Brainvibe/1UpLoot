@@ -1,7 +1,7 @@
 /********INDEX PAGE *******/
 /*** Nav properties ***/
 body{
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 
@@ -23,24 +23,33 @@ nav .brand-logo {
     font-family: 'Covered By Your Grace', cursive;
 }
 
-.title{
-color:black;
-font-size: 30px;
-
-}
-
-
 .main-container{
-    height:50vw;
-    background: url('../images/main.jpg') no-repeat center center fixed;
-    background-size: cover;
-    
-}
-.promo-section{
-    
- 
+    font-family: 'Covered By Your Grace', cursive;
+    background-color: #323232;
+    color:white;
+    font-size: 50px;
 }
 
+.title-description{
+    font-size:28px;
+    font-weight: 100;
+    color:#df5a5a;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+#btn-signup {
+    margin-bottom: 47px;
+    font-size: 20px;
+    }
+
+.icon{
+    font-size: 40px;
+}
+
+.icon-desc{
+    font-size: 20px;
+}
 
 
 /*****************GAMES PAGE****************/

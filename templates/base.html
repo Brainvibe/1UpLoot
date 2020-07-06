@@ -30,9 +30,8 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{url_for('index')}}">Home</a></li>
-                    <li><a href="{{url_for('index')}}">About</a></li>
                     <li><a href="{{url_for('get_games')}}">Loot</a></li>
-                    <li><a href="collapsible.html">Login</a></li>
+                    <li><a href="collapsible.html"><i class="material-icons right">account_circle</i></a></li>
                     <li><a href="mobile.html">Register</a></li>
                 </ul>
             </div>
@@ -44,12 +43,10 @@
         <li><a href="{{url_for('get_games')}}">Loot</a></li>
         <li><a href="collapsible.html">Login</a></li>
         <li><a href="mobile.html">Register</a></li>
-
-
     </ul>
 
 
-
+    
     {% block content %} {% endblock %}
 
 
