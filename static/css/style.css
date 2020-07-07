@@ -1,14 +1,23 @@
-/********INDEX PAGE *******/
-/*** Nav properties ***/
 body {
     font-family: 'Open Sans Condensed', sans-serif;
+ 
 }
 
+.sidenav {
 
+    background-color: #0D0D0D;
+
+}
+
+.sidenav li>a {
+    color: white;
+}
+
+/********INDEX PAGE *******/
+/*** Nav properties ***/
 nav {
     background-color: #0D0D0D;
     font-family: 'Open Sans Condensed', sans-serif;
-
 }
 
 nav ul a {
@@ -28,7 +37,7 @@ nav .brand-logo {
 .main-container {
     font-family: 'Covered By Your Grace', cursive;
     background-color: white;
-    color: #323232;
+    color: black;
     font-size: 50px;
 }
 
@@ -38,7 +47,6 @@ nav .brand-logo {
     color: #8C8C8C;
     font-family: 'Open Sans Condensed', sans-serif;
 }
-
 
 #btn-signup {
     margin-bottom: 47px;
@@ -53,11 +61,39 @@ nav .brand-logo {
     font-size: 20px;
 }
 
-
 /*****************GAMES PAGE****************/
+
 /*** centering plus sign in games.html ***/
 .large {
     padding-top: 50px;
+}
+
+.main-container-games {
+    background-color: white;
+    color: black;
+}
+
+.input-field>label {
+    color: black;
+}
+
+.select-wrapper+label {
+
+    font-size: 15px;
+}
+
+.game-title {
+    font-size: 20px;
+}
+
+.games-title {
+    font-family: 'Covered By Your Grace', cursive;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+
+    color: black;
 }
 
 /************ADD GAMES PAGE*************/
@@ -69,6 +105,25 @@ form.col>div:nth-child(1) {
 
 .switch label input[type=checkbox]:checked+.lever:after {
     background-color: red;
+}
+
+/*********EDIT GAMES PAGE *******/
+
+.datepicker-day-button {
+    color: black;
+}
+
+.datepicker-date-display {
+    background-color: #323232;
+}
+
+
+#form-addedit>div:nth-child(1) {
+    margin-bottom: 50px;
+}
+
+div.container:nth-child(2)>div:nth-child(1) {
+    margin-bottom: 0px;
 }
 
 
