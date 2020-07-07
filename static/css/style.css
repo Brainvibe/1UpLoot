@@ -1,18 +1,20 @@
 /********INDEX PAGE *******/
 /*** Nav properties ***/
-body{
+body {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
 
 nav {
-    background-color: black;
+    background-color: #0D0D0D;
     font-family: 'Open Sans Condensed', sans-serif;
-   
+
 }
+
 nav ul a {
     font-size: 20px;
-    }
+}
+
 nav ul a:hover {
     background-color: #323232;
 }
@@ -23,17 +25,17 @@ nav .brand-logo {
     font-family: 'Covered By Your Grace', cursive;
 }
 
-.main-container{
+.main-container {
     font-family: 'Covered By Your Grace', cursive;
-    background-color: #323232;
-    color:white;
+    background-color: white;
+    color: #323232;
     font-size: 50px;
 }
 
-.title-description{
-    font-size:28px;
+.title-description {
+    font-size: 28px;
     font-weight: 100;
-    color:#df5a5a;
+    color: #8C8C8C;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -41,13 +43,13 @@ nav .brand-logo {
 #btn-signup {
     margin-bottom: 47px;
     font-size: 20px;
-    }
+}
 
-.icon{
+.icon {
     font-size: 40px;
 }
 
-.icon-desc{
+.icon-desc {
     font-size: 20px;
 }
 
@@ -65,6 +67,13 @@ form.col>div:nth-child(1) {
 }
 
 
-.switch label input[type=checkbox]:checked + .lever:after {
-    background-color: red; 
-  }
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: red;
+}
+
+
+/**** Footer ***/
+
+.page-footer {
+    background-color: #262222;
+}
