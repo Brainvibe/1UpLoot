@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <div class="row search-bar">
-            <div class="input-field col s12 m4 l4 center">
+            <div class="input-field col s12 m2 l4 center">
                 <select>
                     <option value="" disabled selected>Platform</option>
                     {% for plat in platforms %}
@@ -18,7 +18,7 @@
                 <label>Platform</label>
             </div>
 
-            <div class="input-field col s12 m4 l4 center">
+            <div class="input-field col s12 m2 l4 center">
                 <select id="genre_name" name="genre_name">
                     <option value="" disabled selected>Genre</option>
                     {% for genre in genres %}
@@ -29,15 +29,9 @@
 
             </div>
 
-
-
-            <div class="col s6 m2 l2 center">
-                <a class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action"><i
-                        class="material-icons">search</i></a>
-            </div>
             
             <div class="col s6 m2 l2 center">
-                <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light red"><i
+                <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light red right"><i
                         class="material-icons">add</i></a>
 
             </div>

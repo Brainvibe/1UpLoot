@@ -26,7 +26,7 @@
                         <i class="material-icons prefix">today</i>
                         <input id="pickup_date" name="pickup_date" type="text" class="datepicker validate"
                             value="{{game.pickup_date}}" required>
-                        <label for="icon_prefix">Pickup date</label>
+                        <label for="icon_prefix">Pickup Date</label>
                     </div>
                 </div>
 
@@ -62,22 +62,42 @@
                     </div>
                     <div class="switch col s12 m4 l4 center">
                         <label>
-                            <input class="red" id="game_condition" name="game_condition" type="checkbox"
-                                value="{{game.game_condition}}">
-                            Used
-                            <span class="lever orange">{{game.game_condition}}</span>
-                            New
+                            Off
+                            <input id="used" name="game_condition" value="{{game.game_condition}}"
+                                type="checkbox">
+                            <span class="lever"></span>
+                            On
                         </label>
+
                     </div>
+
+
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m12 l12 center">
-                        <button class="btn waves-effect waves-orange red">Save
+                        <button class="btn waves-effect waves-green green">Save
                             <i class="material-icons right">save</i>
                         </button>
-                        <a href="{{url_for('delete_game', game_id=game._id)}}"
-                            class="waves-effect waves-light btn btn_small orange">Delete<i
-                                class="material-icons">delete</i></a>
+                        <button <a id="delete-button-link" href="#modal1"
+                            class="modal-trigger btn waves-effect waves-orange red">Delete<i
+                                class="material-icons right">delete</i></a>
+                        </button>
+
+
+
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <p>Are you sure?</p>
+                            </div>
+                            <div class="modal-footer center">
+                                <button>
+                                    <a id="no-button" href="#!" class="modal-close">No</a>
+                                </button>
+                                <button>
+                                    <a id="yes-button" href="{{url_for('delete_game', game_id=game._id)}}">Yes</a>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

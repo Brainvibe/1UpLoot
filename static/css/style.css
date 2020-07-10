@@ -1,6 +1,6 @@
 body {
     font-family: 'Open Sans Condensed', sans-serif;
- 
+
 }
 
 .sidenav {
@@ -51,6 +51,7 @@ nav .brand-logo {
 #btn-signup {
     margin-bottom: 47px;
     font-size: 20px;
+    z-index: 0;
 }
 
 .icon {
@@ -96,6 +97,13 @@ nav .brand-logo {
     color: black;
 }
 
+
+
+
+
+
+
+
 /************ADD GAMES PAGE*************/
 form.col>div:nth-child(1) {
     padding-bottom: 19px;
@@ -124,6 +132,28 @@ form.col>div:nth-child(1) {
 
 div.container:nth-child(2)>div:nth-child(1) {
     margin-bottom: 0px;
+}
+
+#delete-button-link {
+    color: white;
+    text-decoration: none;
+}
+
+#no-button #yes-button {
+    color: black;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+#modal1 {
+    width: 15%;
+}
+
+.modal .modal-footer {
+    text-align: center;
 }
 
 
