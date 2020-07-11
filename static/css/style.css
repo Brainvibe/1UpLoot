@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Open Sans Condensed', sans-serif;
 
@@ -35,7 +39,6 @@ nav .brand-logo {
 }
 
 .main-container {
-    font-family: 'Covered By Your Grace', cursive;
     background-color: white;
     color: black;
     font-size: 50px;
@@ -45,7 +48,7 @@ nav .brand-logo {
     font-size: 28px;
     font-weight: 100;
     color: #8C8C8C;
-    font-family: 'Open Sans Condensed', sans-serif;
+   
 }
 
 #btn-signup {
@@ -60,8 +63,15 @@ nav .brand-logo {
 
 .icon-desc {
     font-size: 20px;
+    color: #8C8C8C;
 }
 
+.icon-desc{
+    margin-bottom: 100px;
+}
+.features-title{
+    margin-bottom: 80px;
+}
 /*****************GAMES PAGE****************/
 
 /*** centering plus sign in games.html ***/
@@ -156,6 +166,21 @@ a {
     text-align: center;
 }
 
+/*****Edit page ****/
+
+#delete-button-link{
+    z-index: 0;
+}
+
+#save-button {
+    z-index: 0;
+}
+
+/** margin bottom buttons **/
+
+div.row:nth-child(3) > div:nth-child(1) {
+    margin-bottom: 12rem;
+    }
 
 /**** Footer ***/
 
