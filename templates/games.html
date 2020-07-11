@@ -40,29 +40,40 @@
 
         <div class="row games-row">
             {% for game in games %}
-           
+
             <div class="col s12 m4 l4 center">
-                
-                <a class="modal-trigger" href="#modal2{{loop.index}}">
+
+                <a class="border modal-trigger" href="#modal2{{loop.index}}">
                     <img class="game-cover" src="{{game.game_image}}" alt="Game Cover" width="200" height="200">
                 </a>
 
                 <div class="game-description">
-                    
+
                     <strong>
                         <p class="game-title">{{game.game_name}}</p>
                     </strong>
                 </div>
-              
+
                 <div id="modal2{{loop.index}}" class="modal">
                     <div class="modal-content">
-                        
+
                         <h4>{{game.game_name}}</h4>
-                        <p>A bunch of text</p>
+                        <p>{{game.platform_name}}</p>
+                        <p>{{game.genre_name}}</p>
+                        <p>{{game.pickup_date}}</p>
+                        <p>{{game.game_condition}}</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="#!" class="modal-close">Agree</a>
-                        <a href="{{url_for('edit_game', game_id=game._id)}}">Edit</a>
+                        <div class="col s6 m6 l6 center">
+                            <a href="{{url_for('edit_game', game_id=game._id)}}">Edit</a>
+
+                        </div>
+
+                        <div class="col s6 m6 l6 center">
+                            <a href="#!" class="modal-close">Ok</a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

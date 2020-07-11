@@ -97,9 +97,7 @@ nav .brand-logo {
     font-size: 20px;
 }
 
-.games-title {
-    font-family: 'Covered By Your Grace', cursive;
-}
+
 
 .dropdown-content li>a,
 .dropdown-content li>span {
@@ -107,10 +105,24 @@ nav .brand-logo {
     color: black;
 }
 
+.game-cover{
+    border-radius: 3%;
+}
+
+
+/***border effect ***/
 
 
 
-
+.border img {
+    transition: .5s ease;
+    }
+    
+    .border img:hover{
+    box-shadow: 0 0 0 3px #262222;
+    transition: .5s ease;
+    }
+    
 
 
 
