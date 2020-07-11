@@ -187,3 +187,20 @@ div.row:nth-child(3) > div:nth-child(1) {
 .page-footer {
     background-color: #262222;
 }
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    #modal1 {
+        width: 50%;
+    }
+    
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape)  {
+  
+    #modal1 {
+        width: 100%;
+    }
+    
+  }
