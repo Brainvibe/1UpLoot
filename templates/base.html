@@ -7,7 +7,7 @@
     <title>1UP Loot</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
@@ -26,7 +26,8 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="{{url_for('index')}}" class="brand-logo"><img src="../static/images/logo.png" with="30" height="30" alt=""> Loot
+                <a href="{{url_for('index')}}" class="brand-logo"><img src="../static/images/logo.png" with="30"
+                        height="30" alt=""> Loot
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
@@ -51,16 +52,25 @@
 
     {% block content %} {% endblock %}
 
-    
-  <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
+
+    <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
         <div class="footer-copyright">
-            <div class="container center">
-                Designed by Nuno Nunes
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <div class="social-icons container center">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                
+                <div class="designed-by">
+                    Designed by Nuno Nunes
+                </div>
             </div>
+
+        </div>
+
+
         </div>
     </footer>
-  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -186,9 +186,19 @@ div.row:nth-child(3) > div:nth-child(1) {
 
 .page-footer {
     background-color: #262222;
+    padding-top: 0px;
 }
 
-
+.social-icons{
+    font-size: 30px;
+    
+}
+.fab{
+    color:#D3D3D3;
+}
+.designed-by{
+    font-size: 15px;
+}
 @media (min-width: 320px) and (max-width: 480px) {
   
     #modal1 {
