@@ -6,6 +6,7 @@ $(document).ready(function () {
     $('.datepicker').datepicker();
     $('.parallax').parallax();
     $('.modal').modal();
+    $('.dropdown-trigger').dropdown();
 });
 
 

@@ -23,6 +23,17 @@ def index():
 def get_games():
     return render_template("games.html", games=mongo.db.games.find(), genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
 
+
+@app.route('/get_search/<search>')
+def get_search(search):
+    plat_list = list(mongo.db.games.find({"platform_name": search}))
+    return render_template("results.html", platforms=plat_list, games=mongo.db.games.find(), genres=mongo.db.genres.find())
+
+@app.route('/search_genre/<genre>')
+def search_genre(genre):
+    genre_list = list(mongo.db.games.find({"genre_name": genre}))
+    return render_template("results_genre.html", games=mongo.db.games.find(), genres=genre_list)
+
 @app.route('/add_games')
 def add_games():
     return render_template("addgame.html",genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
@@ -51,7 +62,6 @@ def update_game(game_id):
         'pickup_date':request.form.get('pickup_date'),
         'platform_name':request.form.get('platform_name'),
         'genre_name':request.form.get('genre_name')
-
     })
     return redirect(url_for('get_games'))
 

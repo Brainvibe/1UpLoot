@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block content %}
+<div class="main-container-games">
+
+    <div class="row">
+        <div class="col s12 m12 l12 center title-games">
+            <h1 class="games-title">Your Loot</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row search-bar">
+            <div class="row search-bar col s12 m4 l4 center">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Platform</a>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="{{url_for("get_search", search="xbox")}}">Xbox</a></a></li>
+                    <li><a href="#!">two</a></li>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                </ul>
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Genre</a>
+                <ul id='dropdown2' class='dropdown-content'>
+                    <li><a href="{{url_for("search_genre", genre="Action")}}">Action</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                </ul>
+                <a href="{{url_for('add_games')}}" class="btn-floating btn-small waves-effect waves-light red"><i
+                        class="material-icons">add</i></a>
+            </div>
+        </div>
+
+        <div class="row games-row">
+            {% for game in platforms%}
+
+            <div class="col s12 m4 l4 center">
+
+                <a class="border modal-trigger" href="#modal2{{loop.index}}">
+                    <img class="game-cover" src="{{game.game_image}}" alt="Game Cover" width="200" height="200">
+                </a>
+
+                <div class="game-description">
+
+                    <strong>
+                        <p class="game-title">{{game.game_name}}</p>
+                    </strong>
+                </div>
+
+                <div id="modal2{{loop.index}}" class="modal">
+                    <div class="modal-content">
+
+                        <h4>{{game.game_name}}</h4>
+                        <p>{{game.platform_name}}</p>
+                        <p>{{game.genre_name}}</p>
+                        <p>{{game.pickup_date}}</p>
+                        <p>{{game.game_condition}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col s6 m6 l6 center">
+                            <a href="{{url_for('edit_game', game_id=game._id)}}">Edit</a>
+
+                        </div>
+
+                        <div class="col s6 m6 l6 center">
+                            <a href="#!" class="modal-close">Ok</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+
+    {% endblock %}
