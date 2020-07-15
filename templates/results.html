@@ -21,11 +21,15 @@
                 <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Genre</a>
                 <ul id='dropdown2' class='dropdown-content'>
                     <li><a href="{{url_for("search_genre", genre="Action")}}">Action</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Action-Adventure")}}">Action-Adventure</a></li>
+                    <li><a href="{{url_for("search_genre", genre="RPG")}}">RPG</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Simulation")}}">Simulation</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Strategy")}}">Strategy</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Sports")}}">Sports</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Puzzle")}}">Puzzle</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Action")}}">MMO</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Action")}}">FPS</a></li>
+                    <li><a href="{{url_for("search_genre", genre="Action")}}">Moba</a></li>
                 </ul>
                 <a href="{{url_for('add_games')}}" class="btn-floating btn-small waves-effect waves-light red"><i
                         class="material-icons">add</i></a>
