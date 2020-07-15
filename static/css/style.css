@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -48,7 +48,7 @@ nav .brand-logo {
     font-size: 28px;
     font-weight: 100;
     color: #8C8C8C;
-   
+
 }
 
 #btn-signup {
@@ -66,12 +66,14 @@ nav .brand-logo {
     color: #8C8C8C;
 }
 
-.icon-desc{
+.icon-desc {
     margin-bottom: 100px;
 }
-.features-title{
+
+.features-title {
     margin-bottom: 80px;
 }
+
 /*****************GAMES PAGE****************/
 
 /*** centering plus sign in games.html ***/
@@ -97,6 +99,34 @@ nav .brand-logo {
     font-size: 20px;
 }
 
+.search-bar {
+    padding-bottom: 50px;
+
+}
+
+.btn-genre {
+    margin-right: 10px;
+}
+
+#search-btn {
+    color: black;
+}
+
+#dropdown1 {
+
+    min-width: 140px;
+}
+
+#dropdown2 {
+
+    min-width: 170px;
+}
+
+#dropdown3 {
+
+  min-width: 120px;
+}
+
 
 
 .dropdown-content li>a,
@@ -105,7 +135,7 @@ nav .brand-logo {
     color: black;
 }
 
-.game-cover{
+.game-cover {
     border-radius: 3%;
 }
 
@@ -116,13 +146,13 @@ nav .brand-logo {
 
 .border img {
     transition: .5s ease;
-    }
-    
-    .border img:hover{
+}
+
+.border img:hover {
     box-shadow: 0 0 0 3px #262222;
     transition: .5s ease;
-    }
-    
+}
+
 
 
 
@@ -180,7 +210,7 @@ a {
 
 /*****Edit page ****/
 
-#delete-button-link{
+#delete-button-link {
     z-index: 0;
 }
 
@@ -190,9 +220,9 @@ a {
 
 /** margin bottom buttons **/
 
-div.row:nth-child(3) > div:nth-child(1) {
+div.row:nth-child(3)>div:nth-child(1) {
     margin-bottom: 12rem;
-    }
+}
 
 /**** Footer ***/
 
@@ -201,28 +231,31 @@ div.row:nth-child(3) > div:nth-child(1) {
     padding-top: 0px;
 }
 
-.social-icons{
+.social-icons {
     font-size: 30px;
-    
+
 }
-.fab{
-    color:#D3D3D3;
+
+.fab {
+    color: #D3D3D3;
 }
-.designed-by{
+
+.designed-by {
     font-size: 15px;
 }
+
 @media (min-width: 320px) and (max-width: 480px) {
-  
+
     #modal1 {
         width: 50%;
     }
-    
-  }
 
-  @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape)  {
-  
+}
+
+@media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+
     #modal1 {
         width: 100%;
     }
-    
-  }
+
+}
