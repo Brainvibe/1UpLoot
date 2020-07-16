@@ -97,7 +97,11 @@ def update_game(game_id):
         'game_condition':request.form.get('game_condition'),
         'pickup_date':request.form.get('pickup_date'),
         'platform_name':request.form.get('platform_name'),
-        'genre_name':request.form.get('genre_name')
+        'genre_name':request.form.get('genre_name'),
+        'game_condition':request.form.get('game_condition'),
+        'game_store':request.form.get('game_store'),
+        'game_price':request.form.get('game_price'),
+        'game_value':request.form.get('game_value'),
     })
     return redirect(url_for('get_games'))
 
@@ -107,7 +111,6 @@ def delete_game(game_id):
     return redirect(url_for('get_games'))
 
 if __name__ == '__main__':
-    app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
          port=os.environ.get('PORT'),
          debug=True)

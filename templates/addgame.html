@@ -55,7 +55,7 @@
                     </div>
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">autorenew</i>
-                        <select>
+                        <select class="validate" id="game_condition" name="game_condition">
                             <option value="" disabled selected>Game Condition</option>
                             <option value="1">New</option>
                             <option value="2">Used</option>
@@ -65,24 +65,21 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="row">
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">store</i>
-                        <input placeholder="Game Store" id="game_store" type="text" class="validate">
+                        <input placeholder="Game Store" id="game_store" name="game_store" type="text" class="validate">
                         <label for="game_store">Game Store</label>
                     </div>
 
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">attach_money</i>
-                        <input placeholder="Purchased Price" id="game_price" type="number" class="validate">
+                        <input placeholder="Purchased Price" id="game_price" name="game_price" type="number" class="validate">
                         <label for="game_price">Purchased Price</label>
                     </div>
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">monetization_on</i>
-                        <input placeholder="Current Value" id="game_value" type="number" min="1" step="any"
+                        <input placeholder="Current Value" id="game_value" name="game_value" type="number" min="1" step="any"
                             class="validate">
                         <label for="game_value">Game Value</label>
                     </div>
