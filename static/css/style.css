@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: 'Open Sans Condensed', sans-serif;
-
+    font-weight: 300;
 }
 
 .sidenav {
@@ -22,10 +22,12 @@ body {
 nav {
     background-color: #0D0D0D;
     font-family: 'Open Sans Condensed', sans-serif;
+   
 }
 
 nav ul a {
     font-size: 20px;
+    
 }
 
 nav ul a:hover {
@@ -44,6 +46,9 @@ nav .brand-logo {
     font-size: 50px;
 }
 
+.title{
+    font-weight: 700;
+}
 .title-description {
     font-size: 28px;
     font-weight: 100;
@@ -58,7 +63,8 @@ nav .brand-logo {
 }
 
 .icon {
-    font-size: 40px;
+    font-size: 60px;
+    color:#ED6E07;
 }
 
 .icon-desc {
@@ -72,14 +78,10 @@ nav .brand-logo {
 
 .features-title {
     margin-bottom: 80px;
+    font-weight: 700;
 }
 
 /*****************GAMES PAGE****************/
-
-/*** centering plus sign in games.html ***/
-.large {
-    padding-top: 50px;
-}
 
 .main-container-games {
     background-color: white;
@@ -95,8 +97,9 @@ nav .brand-logo {
     font-size: 15px;
 }
 
-.game-title {
-    font-size: 20px;
+.games-title {
+    font-size: 45px;
+    font-weight: 700;
 }
 
 .search-bar {
@@ -124,7 +127,7 @@ nav .brand-logo {
 
 #dropdown3 {
 
-  min-width: 120px;
+    min-width: 120px;
 }
 
 
@@ -142,8 +145,6 @@ nav .brand-logo {
 
 /***border effect ***/
 
-
-
 .border img {
     transition: .5s ease;
 }
@@ -153,7 +154,13 @@ nav .brand-logo {
     transition: .5s ease;
 }
 
-
+#ok-btn{
+    margin-left: 20px;
+    font-weight: bold;
+}
+#edit-btn-game{
+    font-weight: bold;
+}
 
 
 /************ADD GAMES PAGE*************/
@@ -191,9 +198,14 @@ div.container:nth-child(2)>div:nth-child(1) {
     text-decoration: none;
 }
 
-#no-button #yes-button {
+#no-button , #yes-button {
     color: black;
-    text-decoration: none;
+    font-weight: bold;
+}
+
+#yes-button {
+    margin-left: 14px;
+    
 }
 
 a {
@@ -259,3 +271,25 @@ div.row:nth-child(3)>div:nth-child(1) {
     }
 
 }
+
+
+
+
+/*
+
+     .input-field input[type=date]:focus+label,
+        .input-field input[type=text]:focus+label,
+        .input-field input[type=email]:focus+label,
+        .input-field input[type=password]:focus+label {
+            color: #e91e63;
+        }
+
+        .input-field input[type=date]:focus,
+        .input-field input[type=text]:focus,
+        .input-field input[type=email]:focus,
+        .input-field input[type=password]:focus {
+            border-bottom: 2px solid #e91e63;
+            box-shadow: none;
+        }
+
+        */

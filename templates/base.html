@@ -7,22 +7,21 @@
     <title>1UP Loot</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import font-awesome-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!--Import logo font-->
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
+    <!--Import default font-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet"> 
+    <!-- Materialize minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-    </style>
     <!-- Import style.css-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-
-
 </head>
 
 <body>
+
+    <!--Nav bar fixed-->
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
@@ -41,6 +40,9 @@
             </div>
         </nav>
     </div>
+
+    <!--Side nav-->
+
     <ul class="sidenav" id="mobile-demo">
         <li><a href="{{url_for('index')}}">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -52,28 +54,25 @@
 
     {% block content %} {% endblock %}
 
-
+    <!--Footer-->
     <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
         <div class="footer-copyright">
             <div class="social-icons container center">
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
                 <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square"></i></a>
-                
                 <div class="designed-by">
                     Designed by Nuno Nunes
                 </div>
             </div>
-
-        </div>
-
-
-        </div>
+        </div>    
     </footer>
 
+    <!--jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
+    <!-- Materialize minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Import Main Js file-->
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
 
 </body>

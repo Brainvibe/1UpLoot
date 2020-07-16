@@ -2,7 +2,7 @@
 <div class="main-container-games">
     <div class="row">
         <div class="col s12 m12 l12 center title-games">
-            <h1 class="games-title">Add Game</h1>
+            <p class="games-title">Add Game</p>
         </div>
     </div>
 
@@ -14,18 +14,20 @@
                 <div class="row">
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">videogame_asset</i>
-                        <input id="game_name" name="game_name" type="text" required>
+                        <input placeholder="Game Name" id="game_name" name="game_name" type="text" required>
                         <label for="icon_prefix">Game Name</label>
                     </div>
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">image</i>
-                        <input id="game_image" name="game_image" type="url" class="validate" placeholder="https://tinyurl.com/y8rey5pg" required>
+                        <input id="game_image" name="game_image" type="url" class="validate"
+                            placeholder="https://tinyurl.com/y8rey5pg" required>
                         <label for="icon_prefix">Image Url(200x200)</label>
                     </div>
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">today</i>
-                        <input id="pickup_date" name="pickup_date" type="text" class="datepicker validate" required>
-                        <label for="icon_prefix">Pickup date</label>
+                        <input placeholder="Pickup Date" id="pickup_date" name="pickup_date" type="text"
+                            class="datepicker validate" required>
+                        <label for="icon_prefix">Pickup Date</label>
                     </div>
                 </div>
 
@@ -51,18 +53,44 @@
                         </select>
                         <label>Genre</label>
                     </div>
-                    <div class="switch col s12 m4 l4 center">
-                        <label>
-                            <input class="red" id="game_condition" name="game_condition" type="checkbox" value="">
-                            Used
-                            <span class="lever orange"></span>
-                            New
-                        </label>
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">autorenew</i>
+                        <select>
+                            <option value="" disabled selected>Game Condition</option>
+                            <option value="1">New</option>
+                            <option value="2">Used</option>
+                            <option value="3">Mint</option>
+                        </select>
+                        <label>Game Condition</label>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">store</i>
+                        <input placeholder="Game Store" id="game_store" type="text" class="validate">
+                        <label for="game_store">Game Store</label>
+                    </div>
+
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">attach_money</i>
+                        <input placeholder="Purchased Price" id="game_price" type="number" class="validate">
+                        <label for="game_price">Purchased Price</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">monetization_on</i>
+                        <input placeholder="Current Value" id="game_value" type="number" min="1" step="any"
+                            class="validate">
+                        <label for="game_value">Game Value</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m12 l12 center">
-                        <button id="save-button" class="btn waves-effect waves-orange red" type="submit" name="action">Save
+                        <button id="save-button" class="btn waves-effect waves-orange red" type="submit"
+                            name="action">Save
                             <i class="material-icons right">save</i>
                         </button>
                     </div>

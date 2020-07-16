@@ -1,6 +1,7 @@
 import os
+import bcrypt
 from os import path
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -16,7 +17,42 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
+    if 'username' in session:
+        return render_template('index.html')
     return render_template("index.html")
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    users = mongo.db.users
+        
+    if request.method == 'POST':
+        login_user = users.find_one({'name' : request.form['username']})
+        print(login_user)
+        if login_user:
+            if bcrypt.hashpw(request.form['pass'], login_user['password'] == login_user['password']):
+               session['username'] = request.form['username']
+            return redirect(url_for('index'))
+            
+        else:
+            return 'Invalid username/password combination'
+            
+    return redirect(url_for('login'))
+        
+    
+    
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'name':request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        return 'Username already exists'
+    return render_template('register.html')
 
 
 @app.route('/get_games')
@@ -71,6 +107,8 @@ def delete_game(game_id):
     return redirect(url_for('get_games'))
 
 if __name__ == '__main__':
+    app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
          port=os.environ.get('PORT'),
          debug=True)
+         

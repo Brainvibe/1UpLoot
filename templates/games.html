@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col s12 m12 l12 center title-games">
-            <h1 class="games-title">Your Loot</h1>
+            <p class="games-title">Your Loot</p>
         </div>
     </div>
 
@@ -88,14 +88,10 @@
                     <p>{{game.game_condition}}</p>
                 </div>
                 <div class="modal-footer">
-                    <div class="col s6 m6 l6 center">
-                        <a href="{{url_for('edit_game', game_id=game._id)}}">Edit</a>
 
-                    </div>
+                    <a id="edit-btn-game"href="{{url_for('edit_game', game_id=game._id)}}">Edit</a>
+                    <a id="ok-btn"href="#!" class="modal-close">Ok</a>
 
-                    <div class="col s6 m6 l6 center">
-                        <a href="#!" class="modal-close">Ok</a>
-                    </div>
 
 
                 </div>

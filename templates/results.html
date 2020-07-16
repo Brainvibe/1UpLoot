@@ -6,36 +6,61 @@
             <h1 class="games-title">Your Loot</h1>
         </div>
     </div>
-    <div class="container">
-        <div class="row search-bar">
-            <div class="row search-bar col s12 m4 l4 center">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Platform</a>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="{{url_for("get_search", search="xbox")}}">Xbox</a></a></li>
-                    <li><a href="#!">two</a></li>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                </ul>
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Genre</a>
-                <ul id='dropdown2' class='dropdown-content'>
-                    <li><a href="{{url_for("search_genre", genre="Action")}}">Action</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Action-Adventure")}}">Action-Adventure</a></li>
-                    <li><a href="{{url_for("search_genre", genre="RPG")}}">RPG</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Simulation")}}">Simulation</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Strategy")}}">Strategy</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Sports")}}">Sports</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Puzzle")}}">Puzzle</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Action")}}">MMO</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Action")}}">FPS</a></li>
-                    <li><a href="{{url_for("search_genre", genre="Action")}}">Moba</a></li>
-                </ul>
-                <a href="{{url_for('add_games')}}" class="btn-floating btn-small waves-effect waves-light red"><i
-                        class="material-icons">add</i></a>
-            </div>
-        </div>
 
+    <div class="row search-bar col s3 m3 l3 center">
+        <a id="search-btn" class='dropdown-trigger btn waves-effect waves-light grey lighten-5' href='#'
+            data-target='dropdown1'>Platform</a>
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="{{url_for("get_search", search="xbox one")}}">Xbox One</a></li>
+            <li><a href="{{url_for("get_search", search="xbox 360")}}">Xbox 360</a></li>
+            <li><a href="{{url_for("get_search", search="xbox X")}}">Xbox Series X</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 5")}}">Playstation 5</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 4")}}">Playstation 4</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 3")}}">Playstation 3</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 2")}}">Playstation 2</a></li>
+            <li><a href="{{url_for("get_search", search="switch")}}">Nintendo Switch</a></li>
+            <li><a href="{{url_for("get_search", search="3ds")}}">Nintendo 3DS</a></li>
+
+        </ul>
+        <a id="search-btn" class='dropdown-trigger btn waves-effect waves-light grey lighten-5' href='#'
+            data-target='dropdown2'>Retro</a>
+        <ul id='dropdown2' class='dropdown-content'>
+            <li><a href="{{url_for("get_search", search="xbox one")}}">Commodore Amiga</a></li>
+            <li><a href="{{url_for("get_search", search="xbox 360")}}">Commodore 64</a></li>
+            <li><a href="{{url_for("get_search", search="xbox X")}}">Spectrum</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 5")}}">NES</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 4")}}">SNES</a></li>
+            <li><a href="{{url_for("get_search", search="gameboy")}}">GameBoy</a></li>
+            <li><a href="{{url_for("get_search", search="psx")}}">PSX</a></li>
+            <li><a href="{{url_for("get_search", search="playstation 2")}}">Playstation 2</a></li>
+            <li><a href="{{url_for("get_search", search="xbox")}}">Xbox</a></li>
+            <li><a href="{{url_for("get_search", search="saturn")}}">Sega Saturn</a></li>
+            <li><a href="{{url_for("get_search", search="megadrive")}}">Sega Megadrive</a></li>
+            <li><a href="{{url_for("get_search", search="megacd")}}">Sega MegaCD</a></li>
+            <li><a href="{{url_for("get_search", search="32x")}}">Sega 32X</a></li>
+            <li><a href="{{url_for("get_search", search="master system")}}">Sega Master System</a></li>
+            <li><a href="{{url_for("get_search", search="game gear")}}">Sega Game Gear</a></li>
+            <li><a href="{{url_for("get_search", search="psp")}}">PSP</a></li>
+
+        </ul>
+        <a id="search-btn" class='dropdown-trigger btn-genre btn waves-effect waves-light grey lighten-5' href='#'
+            data-target='dropdown3'>Genre</a>
+        <ul id='dropdown3' class='dropdown-content'>
+            <li><a href="{{url_for("search_genre", genre="Action")}}">Action</a></li>
+            <li><a href="{{url_for("search_genre", genre="Action-Adventure")}}">Action-Adventure</a></li>
+            <li><a href="{{url_for("search_genre", genre="RPG")}}">RPG</a></li>
+            <li><a href="{{url_for("search_genre", genre="Simulation")}}">Simulation</a></li>
+            <li><a href="{{url_for("search_genre", genre="Strategy")}}">Strategy</a></li>
+            <li><a href="{{url_for("search_genre", genre="Sports")}}">Sports</a></li>
+            <li><a href="{{url_for("search_genre", genre="Puzzle")}}">Puzzle</a></li>
+            <li><a href="{{url_for("search_genre", genre="Action")}}">MMO</a></li>
+            <li><a href="{{url_for("search_genre", genre="Action")}}">FPS</a></li>
+            <li><a href="{{url_for("search_genre", genre="Action")}}">Moba</a></li>
+        </ul>
+        <a href="{{url_for('add_games')}}" class="btn-floating btn-small waves-effect waves-light red"><i
+                class="material-icons">add</i></a>
+    </div>
+    <div class="container">
         <div class="row games-row">
             {% for game in platforms%}
 
