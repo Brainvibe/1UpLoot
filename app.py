@@ -36,7 +36,8 @@ def login():
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         else:
-            return 'Invalid username/password'
+            error = 'Invalid username/password'
+            return render_template('login.html',error_login=error)
     else:
         return redirect(url_for('register'))
 
@@ -56,7 +57,9 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('get_games'))
         else:
-            return 'Username already exists'
+            error = 'Username already exists'
+            return render_template('register.html',error_register=error)
+
     else:
         return render_template('register.html')
 
@@ -65,7 +68,7 @@ def logout():
     session.pop('username', None)
 
     return redirect(url_for('home'))
-    
+
 @app.route('/get_games')
 def get_games():
     return render_template("games.html", games=mongo.db.games.find(), genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
