@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col s12 m12 l12 center title-games">
-            <p class="games-title">Your Loot</p>
+            <p class="games-title">{{user.title()}}'s Loot</p>
         </div>
     </div>
 
@@ -12,14 +12,14 @@
             data-target='dropdown1'>Platform</a>
         <ul name="platform_name" id='dropdown1' class='dropdown-content'>
 
-            <li><a href="{{url_for("get_search", search="xbox one")}}">Xbox One</a></li>
-            <li><a href="{{url_for("get_search", search="xbox 360")}}">Xbox 360</a></li>
-            <li><a href="{{url_for("get_search", search="xbox X")}}">Xbox Series X</a></li>
-            <li><a href="{{url_for("get_search", search="playstation 5")}}">Playstation 5</a></li>
-            <li><a href="{{url_for("get_search", search="playstation 4")}}">Playstation 4</a></li>
-            <li><a href="{{url_for("get_search", search="playstation 3")}}">Playstation 3</a></li>
-            <li><a href="{{url_for("get_search", search="switch")}}">Nintendo Switch</a></li>
-            <li><a href="{{url_for("get_search", search="3ds")}}">Nintendo 3DS</a></li>
+            <li><a href="{{url_for("get_search", search="xbox one",user=user)}}">Xbox One</a></li>
+            <li><a href="{{url_for("get_search", search="xbox 360",user=user)}}">Xbox 360</a></li>
+            <li><a href="{{url_for("get_search", search="xbox X",user=user)}}">Xbox Series X</a></li>
+            <li><a href="{{url_for("get_search", search="Playstation 5",user=user)}}">Playstation 5</a></li>
+            <li><a href="{{url_for("get_search", search="Playstation 4",user=user)}}">Playstation 4</a></li>
+            <li><a href="{{url_for("get_search", search="Playstation 3",user=user)}}">Playstation 3</a></li>
+            <li><a href="{{url_for("get_search", search="switch",user=user)}}">Nintendo Switch</a></li>
+            <li><a href="{{url_for("get_search", search="3ds",user=user)}}">Nintendo 3DS</a></li>
 
         </ul>
         <a id="search-btn" class='dropdown-trigger btn btn-large waves-effect waves-light grey lighten-5' href='#'
@@ -64,7 +64,7 @@
 <div class="container">
     <div class="row games-row">
         {% for game in games %}
-
+        {% if game.user == session['username']  %}
         <div class="col s12 m4 l4 center">
 
             <a class="border modal-trigger" href="#modal2{{loop.index}}">
@@ -103,6 +103,7 @@
 
             </div>
         </div>
+        {% endif %}
         {%endfor%}
     </div>
 </div>

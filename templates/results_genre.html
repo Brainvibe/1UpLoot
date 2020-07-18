@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col s12 m12 l12 center title-games">
-            <h1 class="games-title">Your Loot</h1>
+            <p class="games-title">{{user.title()}}'s Loot</p>
         </div>
     </div>
 
@@ -64,7 +64,7 @@
 <div class="container">
     <div class="row games-row">
         {% for game in genres%}
-
+        {% if game.user == session['username']  %}
         <div class="col s12 m4 l4 center">
 
             <a class="border modal-trigger" href="#modal2{{loop.index}}">
@@ -101,6 +101,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {%endfor%}
     </div>
 </div>

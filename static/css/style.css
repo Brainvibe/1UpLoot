@@ -241,6 +241,18 @@ div.row:nth-child(3)>div:nth-child(1) {
     margin-bottom: 12rem;
 }
 
+
+/*****Login/register pages ****/
+
+#box-input{
+    width:38%;
+}
+
+.active{
+    margin-right: 10px;
+    font-size: 15px;
+}
+
 /**** Footer ***/
 
 .page-footer {
