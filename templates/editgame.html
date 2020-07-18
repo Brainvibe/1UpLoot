@@ -13,27 +13,25 @@
                 <div class="row">
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">videogame_asset</i>
-                        <input id="game_name" name="game_name" type="text" value="{{game.game_name}}" required>
-                        <label for=" icon_prefix">Game Name</label>
+                        <input placeholder="Game Name" id="game_name" name="game_name" type="text"
+                            value="{{game.game_name}}" required>
+                        <label for="icon_prefix">Game Name</label>
                     </div>
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">image</i>
                         <input id="game_image" name="game_image" type="url" class="validate" value="{{game.game_image}}"
-                            required>
+                            placeholder="https://tinyurl.com/y8rey5pg" required>
                         <label for="icon_prefix">Image Url(200x200)</label>
                     </div>
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">today</i>
-                        <input id="pickup_date" name="pickup_date" type="text" class="datepicker validate"
-                            value="{{game.pickup_date}}" required>
+                        <input placeholder="Pickup Date" id="pickup_date" name="pickup_date" type="text"
+                            value="{{game.pickup_date}}" class="datepicker validate" required>
                         <label for="icon_prefix">Pickup Date</label>
                     </div>
-                </div>
-
-                <div class="row">
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">gamepad</i>
-                        <select class="validate" id="platform_name" name="platform_name">
+                        <select class="validate" id="platform_name" name="platform_name" required>
                             <option value="" disabled selected>Platform</option>
                             {% for plats in plat %}
                             {% if plats.platform_name == game.platform_name %}
@@ -45,10 +43,9 @@
                         </select>
                         <label>Platform</label>
                     </div>
-
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">movie</i>
-                        <select class="validate" id="genre_name" name="genre_name">
+                        <select class="validate" id="genre_name" name="genre_name" required>
                             <option value="" disabled selected>Genre</option>
                             {% for genres in genre %}
                             {% if genres.genre_name == game.genre_name %}
@@ -60,17 +57,35 @@
                         </select>
                         <label>Genre</label>
                     </div>
-                    <div class="switch col s12 m4 l4 center">
-                        <label>
-                            Off
-                            <input id="used" name="game_condition" value="{{game.game_condition}}" type="checkbox">
-                            <span class="lever"></span>
-                            On
-                        </label>
-
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">autorenew</i>
+                        <select class="validate" id="game_condition" name="game_condition">
+                            <option value="" disabled selected>Game Condition</option>
+                            <option value="New">New</option>
+                            <option value="Used">Used</option>
+                            <option value="Mint">Mint</option>
+                        </select>
+                        <label>Game Condition</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">store</i>
+                        <input placeholder="Game Store" id="game_store" name="game_store" type="text"
+                            value="{{game.game_store}}" class="validate">
+                        <label for="game_store">Game Store</label>
                     </div>
 
-
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">attach_money</i>
+                        <input placeholder="Purchased Price" id="game_price" name="game_price"
+                            value="{{game.game_price}}" type="number" class="validate">
+                        <label for="game_price">Purchased Price</label>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">monetization_on</i>
+                        <input placeholder="Current Value" id="game_value" name="game_value" value="{{game.game_value}}"
+                            type="number" min="1" step="any" class="validate">
+                        <label for="game_value">Game Value</label>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m12 l12 center">
@@ -81,17 +96,13 @@
                             class="modal-trigger btn waves-effect waves-orange red">Delete<i
                                 class="material-icons right">delete</i></a>
                         </button>
-
-
-
                         <div id="modal1" class="modal">
                             <div class="modal-content">
                                 <p>Are you sure?</p>
                             </div>
                             <div class="modal-footer center">
 
-                                <a id="no-button" href="#!"
-                                    class="modal-close">No</a>
+                                <a id="no-button" href="#!" class="modal-close">No</a>
                                 <a id="yes-button" href="{{url_for('delete_game', game_id=game._id)}}">Yes</a>
                             </div>
                         </div>

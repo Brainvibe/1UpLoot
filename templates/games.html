@@ -79,33 +79,31 @@
             </div>
 
             <div id="modal2{{loop.index}}" class="modal">
-                <div class="modal-content">
-                    <div class="col s12 m4 l4">
-                        <img src="{{game.game_image}}" alt="">
-                        <div class="div">
+                <div class="modal-content center">
+                    <h4>{{game.game_name}}</h4>
+                    <p><strong>Platform:</strong>{{game.platform_name}}</p>
+                    <p>Genre:{{game.genre_name}}</p>
+                    <p>Pickup Date:{{game.pickup_date}}</p>
+                    <p>Condition:{{game.game_condition}}</p>
+                    <p>Store:{{game.game_store}}</p>
+                    <p>Price:{{game.game_price}}</p>
+                    <p>Value:{{game.game_value}}</p>
+                    <div class="row">
+                        <div class="col s12">
                             <a class="btn orange" id="edit-btn-game"
                                 href="{{url_for('edit_game', game_id=game._id)}}">Edit</a>
                             <a class="btn green modal-close" id="ok-btn" href="#!">Ok</a>
                         </div>
                     </div>
-                    <div class="col s12 m4 l4 center">
-                        <h4>{{game.game_name}}</h4>
-                        <p>Platform:{{game.platform_name}}</p>
-                        <p>Genre:{{game.genre_name}}</p>
-                        <p>Pickup Date:{{game.pickup_date}}</p>
-                        <p>Condition:{{game.game_condition}}</p>
-                        <p>Store:{{game.game_store}}</p>
-                        <p>Price:{{game.game_price}}</p>
-                        <p>Value:{{game.game_value}}</p>
-                    </div>
 
                 </div>
-
             </div>
+
         </div>
-        {% endif %}
-        {%endfor%}
     </div>
+    {% endif %}
+    {%endfor%}
+</div>
 </div>
 
 {% endblock %}
