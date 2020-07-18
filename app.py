@@ -60,7 +60,12 @@ def register():
     else:
         return render_template('register.html')
 
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
 
+    return redirect(url_for('home'))
+    
 @app.route('/get_games')
 def get_games():
     return render_template("games.html", games=mongo.db.games.find(), genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find())
