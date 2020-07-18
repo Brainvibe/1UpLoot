@@ -12,7 +12,8 @@
     <!--Import logo font-->
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <!--Import default font-->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap"
+        rel="stylesheet">
     <!-- Materialize minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Import style.css-->
@@ -33,9 +34,9 @@
                     <li><a href="{{url_for('index')}}">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="{{url_for('get_games')}}">Loot</a></li>
-                    <li><a href="collapsible.html"><i class="material-icons right">account_circle</i></a></li>
-                    <li><a href="mobile.html">Register</a></li>
+                    <!--<li><a href="{{url_for('get_games')}}">Loot</a></li>-->
+                    <li><a href="{{url_for('login_page')}}"><i class="material-icons right">account_circle</i></a></li>
+                    <li><a href="{{url_for('register')}}">Register</a></li>
                 </ul>
             </div>
         </nav>
@@ -47,9 +48,9 @@
         <li><a href="{{url_for('index')}}">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="{{url_for('get_games')}}">Loot</a></li>
-        <li><a href="collapsible.html">Login</a></li>
-        <li><a href="mobile.html">Register</a></li>
+        <!--<li><a href="{{url_for('get_games')}}">Loot</a></li>-->
+        <li><a href="{{url_for('login_page')}}"><i class="material-icons right">account_circle</i></a></li>
+        <li><a href="{{url_for('register')}}">Register</a></li>
     </ul>
 
     {% block content %} {% endblock %}
@@ -65,7 +66,7 @@
                     Designed by Nuno Nunes
                 </div>
             </div>
-        </div>    
+        </div>
     </footer>
 
     <!--jQuery-->
