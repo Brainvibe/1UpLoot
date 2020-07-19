@@ -1,17 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <div class="main-container-games">
-
+    <!--User title-->
     <div class="row">
         <div class="col s12 m12 l12 center title-games">
             <p class="games-title">{{user.title()}}'s Loot</p>
         </div>
     </div>
-
+    <!--Search bar buttons-->
     <div class="row search-bar col s3 m3 l3 center">
+        <!--Platform Search-->
         <a id="search-btn" class='dropdown-trigger btn btn-large waves-effect waves-light grey lighten-5' href='#'
             data-target='dropdown1'>Platform</a>
         <ul name="platform_name" id='dropdown1' class='dropdown-content'>
-
             <li><a href="{{url_for("get_search", search="PC",user=user)}}">PC</a></li>
             <li><a href="{{url_for("get_search", search="Xbox One",user=user)}}">Xbox One</a></li>
             <li><a href="{{url_for("get_search", search="Xbox 360",user=user)}}">Xbox 360</a></li>
@@ -21,8 +21,8 @@
             <li><a href="{{url_for("get_search", search="Playstation 3",user=user)}}">Playstation 3</a></li>
             <li><a href="{{url_for("get_search", search="Nintendo Switch",user=user)}}">Nintendo Switch</a></li>
             <li><a href="{{url_for("get_search", search="Nintendo 3DS",user=user)}}">Nintendo 3DS</a></li>
-
         </ul>
+        <!--Retro game Search-->
         <a id="search-btn" class='dropdown-trigger btn btn-large waves-effect waves-light grey lighten-5' href='#'
             data-target='dropdown2'>Retro</a>
         <ul id='dropdown2' class='dropdown-content'>
@@ -42,8 +42,8 @@
             <li><a href="{{url_for("get_search", search="Master System",user=user)}}">Sega Master System</a></li>
             <li><a href="{{url_for("get_search", search="Game Gear",user=user)}}">Sega Game Gear</a></li>
             <li><a href="{{url_for("get_search", search="PSP",user=user)}}">PSP</a></li>
-
         </ul>
+        <!--Game Genre Search-->
         <a id="search-btn" class='dropdown-trigger btn-genre btn btn-large waves-effect waves-light grey lighten-5'
             href='#' data-target='dropdown3'>Genre</a>
         <ul id='dropdown3' class='dropdown-content'>
@@ -58,30 +58,29 @@
             <li><a href="{{url_for("search_genre", genre="FPS",user=user)}}">FPS</a></li>
             <li><a href="{{url_for("search_genre", genre="MOBA",user=user)}}">MOBA</a></li>
         </ul>
-        <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light red"><i
+        <!--Add games button-->
+        <a href="{{url_for('add_games')}}" class="btn-floating btn-large waves-effect waves-light amber darken-3"><i
                 class="material-icons">add</i></a>
     </div>
 </div>
-<div class="container">
+<div class="container games-container">
     <div class="row games-row">
+        <!--If user is logged-in display search platform games user chose-->
         {% for game in platforms%}
         {% if game.user == session['username']  %}
         <div class="col s12 m4 l4 center">
-
+            <!--Trigger Modal when a game is chosen-->
             <a class="border modal-trigger" href="#modal2{{loop.index}}">
+                <!--Game Image-->
                 <img class="game-cover" src="{{game.game_image}}" alt="Game Cover" width="200" height="200">
             </a>
-
+            <!--Game Description-->
             <div class="game-description">
-
-                <strong>
-                    <p class="game-title">{{game.game_name}}</p>
-                </strong>
+                <h5>{{game.game_name}}</h5>
             </div>
-
+            <!--Modal with all game information-->
             <div id="modal2{{loop.index}}" class="modal">
                 <div class="modal-content">
-
                     <h4>{{game.game_name}}</h4>
                     <p>Platform:{{game.platform_name}}</p>
                     <p>Genre:{{game.genre_name}}</p>
@@ -90,8 +89,8 @@
                     <p>Store:{{game.game_store}}</p>
                     <p>Price:{{game.game_price}}</p>
                     <p>Value:{{game.game_value}}</p>
-
                 </div>
+                <!--Edit and Ok buttons to close or edit the game chosen-->
                 <div class="modal-footer">
                     <div class="row">
                         <div class="col s12">

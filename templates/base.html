@@ -26,8 +26,9 @@
 
 <body>
 
-    <!--Nav bar fixed-->
+    <!--If user is logged in then show the correct NavBar options-->
     {% if session['username'] %}
+    <!--Nav bar fixed-->
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
@@ -53,11 +54,12 @@
         <li><a href="{{url_for('index')}}">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#features">Features</a></li>
+        <li><a href="#">Hi {{session['username'].title()}}!</a></li>
         <li><a href="{{url_for('user_games', username=user)}}">Loot</a></li>
         <li><a href="{{url_for('logout')}}">Logout</a></li>
     </ul>
     {% else %}
-
+    <!--If not logged in display the following Nav bar-->
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
@@ -84,12 +86,11 @@
         <li><a href="#features">Features</a></li>
         <li><a href="{{url_for('login_page')}}">Login</a></li>
         <li><a href="{{url_for('register')}}">Register</a></li>
-        <li><a href="{{url_for('logout')}}">Logout</a></li>
     </ul>
 
     
   {% endif %}
-    {% block content %} {% endblock %}
+  {% block content %} {% endblock %}
 
     <!--Footer-->
     <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
@@ -105,7 +106,7 @@
         </div>
     </footer>
 
-    <!--jQuery-->
+    <!--import jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Materialize minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
