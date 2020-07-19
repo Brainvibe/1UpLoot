@@ -39,8 +39,6 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 * As a collector, I want to have the option to add retro gaming systems, in case I decide to collect for those systems.
 * As a user/collector, I want to have all major platforms available to me so I can add all games from my collection.
 
-* Add more stories with session implemented -----
-
 ## Features
 
 ### Existing Features
@@ -66,7 +64,7 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 * User Session
   * When the user is logged in, they're able to create their collection, Add/Edit/Delete/Modify their games, in a more private and personalized way.
   
-## Features left to implement
+### Features left to implement
 
 As I develop my skills I would like to implement more features in this app like:
 
@@ -83,11 +81,11 @@ As I develop my skills I would like to implement more features in this app like:
 
 ## Wireframes
 
-Need to update this
+Wireframes done with Balsamiq, available here:
 
-* [Desktop](https://github.com/Brainvibe/travelportugal/blob/master/wireframes/desktop.png)
-* [Mobile](https://github.com/Brainvibe/travelportugal/blob/master/wireframes/mobile.png)
-* [Tablet](https://github.com/Brainvibe/travelportugal/blob/master/wireframes/tablet.png)
+* [Desktop](https://github.com/Brainvibe/1UpLoot/blob/master/data/wireframes/Desktop.png)
+* [Mobile](https://github.com/Brainvibe/1UpLoot/blob/master/data/wireframes/Mobile.png)
+* [Tablet](https://github.com/Brainvibe/1UpLoot/blob/master/data/wireframes/Tablet.png)
 
 ## Technologies Used
 
@@ -132,69 +130,145 @@ Need to update this
 
 ## Testing
 
-* **W3C Validation Services**
-  * Markup Validation Service
-    * Test result
+### W3C Validation Services
 
-  * W3C Link Checker
-    * No errors, all links working properly. Only two links were not able to be tested by the tool. Here's the console log:
+* ```Attribute with not allowed on element img at this point```
+  * Had a typo in img: ```with``` instead of ```width```, changed and fixed.
+* ```An img element must have an alt attribute, except under certain conditions.```
+  * Fixed missing ```alt``` attribute to img.
+* ```No space between attributes.```
+  * Fixed the space between attributes
 
-            info Line: 333 https://www.facebook.com/
-            Status: (N/A) Forbidden by robots.txt
-            The link was not checked due to robots exclusion rules. Check the link manually. 
-           
-            info Line: 338 https://www.twitter.com/
-            Status: (N/A) Forbidden by robots.txt
-            The link was not checked due to robots exclusion rules. Check the link manually. 
+### W3C Link Checker
 
-    * Both links were tested manually and working.
+* No errors, all links working properly. Only two links were not able to be tested by the tool. Here's the console log:
 
-  * CSS Validation service
-    * Test result
+  ```info Line: 333 https://www.facebook.com/
+       Status: (N/A) Forbidden by robots.txt
+       The link was not checked due to robots exclusion rules. Check the link manually.
+       info Line: 338 https://www.twitter.com/
+       Status: (N/A) Forbidden by robots.txt
+       The link was not checked due to robots exclusion rules. Check the link manually.
+  ```
 
-* **JSHint**
-  * test results
+  * Both links were tested manually and working.
+  
+### CSS Validation service
 
-* **Google dev tools**
-  * Audit tool
-    * Accessibility - test result
+* All errors were from third party errors and css issues in Materilize like so:
 
-    * SEO - test result
+  ```Sorry! We found the following errors (1)
+    URI : https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css
+    13 .table-of-contents a Value Error : letter-spacing only 0 can be a unit. You must put a unit after your number : 0.4
+  ```
 
-      * Best Practices  
-            - test result
+## Google dev tools
 
-    * Performance
-      * test result
+### Accessibility
 
-* **Non-automated testing:**
+* ```Background and foreground colors do not have a sufficient contrast ratio```
+  * This was related to the description text color and sign up button color, changed and fixed.
+* ```Links do not have a discernible name```
+  * Footer links didn't have a proper name, added ```aria-label``` to all links changed and fixed.
+* It's now scored 100.
 
-  * Links:
+### SEO
 
-    * Checked all links especially the footer social icons, to make sure they were opening on a new tab correctly.
+* ```Document does not have a meta description```
+  * Fixed by adding Metadata
+* ```Links do not have a discernible name```
+  * Footer links didn't have a proper name, added ```aria-label``` to all links changed and fixed.
+* It's now scored 100.
 
-  * Contact form:
+### Best Practices
 
-    * Tried to submit the empty form and verify that an error message about the required fields appears
+* ```Includes front-end JavaScript libraries with known security vulnerabilities 3 vulnerabilities detected```
+  * This was due to be using a vulnerable and outdated version of jQuery 3.2.1, updated and changed to the latest version 3.5.1
+* It's now scored 100.
 
-    * Tried to submit the form with an invalid email address and verify that a relevant error message appears
+### Performance
 
-    * Tried to submit the form with all inputs valid and verify that a success message appears with a alert message.
+* Performance locally is at 93, but due to heroku deployment, the performance took a big hit going to 74. This is all due to the third party requests.
 
-* **Tested Devices**
-  * Apart from using the dev tools to see if the site was responsive across different resolutions I've tested all features on the following devices:
-    * One Plus 7 pro
-    * Fire HD 10
-    * Ipad
-    * Iphone 11
-    * Macbook Pro 13"
-    * Windows Desktop
+## Non-automated testing
 
-* **Browsers**
-  * To ensure browser compatibility I've tested all features above on the following browsers:
-    * Chrome
-    * Firefox
-    * Safari
+### Links
+
+* Checked all links especially the footer social icons, to make sure they were opening on a new tab correctly.
+* Opened the app in different devices to check their responsiveness.
+
+### Login/Register testing
+
+### Login
+
+* Typed incorrect credentials in order to see if the correct error message was given to the user
+* Tried to login without any text in the input fields to test the validation and feedback message to the user, on both username and password.
+* Tested sign up link, to see if it was redirected correctly to register page.
+* Tested after login if the user was correctly displayed in the navbar
+* Tested if the correct navbar options were being displayed after login
+* Tested all links after the user is logged in.
+
+### Register
+
+* Typed username that existed already in the database to see if the feedback message was given to the user.
+* Typed without any text to see if the form validation was working and the appropriate messaging was delivered to the user.
+* Typed only username to test the validation to avoid creating accounts without user name
+* Typed only password to avoid creating accounts without any passwords and the correct message was given to the user  
+* Tested if the register routine was working correctly and not allowing creation of duplicate users. For each entry I've check in mongodb if there was any duplicate entries.
+
+### Logout
+
+* Tested if the user was logged out completely from the page, by checking the session in dev tools.
+* Checked if the correct navbar options were displayed correctly after logout by checking if the user is logged or not.
+* Tested all links after being logged out to see if everything was redirected correctly.
+
+### Search
+
+* Added a game for each platform and genres, to test if all searches were being done correctly
+* Ran a search for all platforms, retro platforms and genres, to test if the games that were showing up in the results were not from other users, and only from the session user logged in.
+
+### Loot/Game list
+
+* Tested if loop.index was corrected implemented by adding several games, and make sure a unique modal was opened for each game.
+* Tested opening modal for each game and make sure that (Edit and Ok buttons) were being redirected to the game that was selected.
+* Added several games to test if all values were introduzed correctly in the database and showing correctly in modal.
+* Tested if all games were showing correctly for each user And not all users. This was done by creating several different accounts and creation of several game lists on different users.
+
+### Add Games
+
+* Tried to submit different values on all fields to check if they were being saved correctly in the database.
+* Tested validation forms, by not entering any text on the required fields, confirming that the user got the correct feedback message.
+* Tried to open add games link without a user being logged in, to see if it was redirected and got the appropriate message.
+* Added game for each platform, genre and game condition, to test if all values were being send correctly to the database.
+
+### Edit Games
+
+* Edited every entry, to see if was saving correctly all information into the database.
+* Opened manually the edit games page link without a user being logged it, for security purposes.
+
+### Delete
+
+* Delete task was tested several times with different users logged in, to see if the correct games were being deleted for a single user, and not for all users.
+* Tested the delete task on results and results_genre to check if everything was being redirect correctly.
+* Modal message confirmation test, if the user was sure he wanted to delete a game.
+* Several combinations of modal delete confirmation, were tested to make sure the game wasn't being deleted by choosing the incorrect option.
+
+### Tested Devices
+
+* Apart from using the dev tools to see if the site was responsive across different resolutions I've tested all features on the following devices:
+  * One Plus 7 pro
+  * Fire HD 10
+  * Ipad
+  * Iphone 11
+  * Macbook Pro 13"
+  * Windows Desktop
+
+### Tested Browsers
+
+* To ensure browser compatibility I've tested all features above on the following browsers:
+  * Chrome
+  * Firefox
+  * Safari
 
 ## Deployment
 
