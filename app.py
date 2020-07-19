@@ -71,21 +71,21 @@ def user_games(username):
         user = session['username']
         return render_template("games.html", games=mongo.db.games.find(), genres=mongo.db.genres.find(), platforms=mongo.db.platforms.find(), user=user)
 
-@app.route('/get_search/<search>', methods=['POST'])
+@app.route('/get_search/<search>')
 def get_search(search):
     if 'username' in session:
        user = session['username']
-       plat_list = list(mongo.db.games.find({"platform_name": search, "user:":user}))
+       plat_list = list(mongo.db.games.find({"platform_name": search}))
        print(plat_list)
        return render_template("results.html", user=user,platforms=plat_list, games=mongo.db.games.find(), genres=mongo.db.genres.find())
     else:
-       return redirect(url_for('index'))
+       return render_template("results.html", user=user,platforms=plat_list, games=mongo.db.games.find(), genres=mongo.db.genres.find())
 
 @app.route('/search_genre/<genre>')
 def search_genre(genre):
   if 'username' in session:
     user = session['username']
-    genre_list = list(mongo.db.games.find({"genre_name": genre,"user:":user}))
+    genre_list = list(mongo.db.games.find({"genre_name": genre}))
     print(genre_list)
     return render_template("results_genre.html", user=user, games=mongo.db.games.find(), genres=genre_list)
   else:

@@ -1,6 +1,6 @@
 # 1UpLoot
 
-Live version [here](https://brainvibe.github.io/travelportugal/)
+Live version [here](https://oneuploot.herokuapp.com/)
 
 ## Index
 
@@ -18,7 +18,6 @@ Live version [here](https://brainvibe.github.io/travelportugal/)
 
 1UP Loot is a web application, designed for physical game collectors to plan, track and organize their collections. All information the user creates is saved into a database, so they can easily access their collections on every device. All major platforms are supported including retro gaming systems and all genres.
 Users can add, search, edit, delete their games into the web app. Each game entry has several fields like: Game Name, Game Platform, Game Genre, Pickup Date, Game Store, Game Price, Current Value, Game condition and Game Image.
-
 With Game Image users can add a url 200x200 hosted cover image of their choice.
 
 ## UX
@@ -40,6 +39,8 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 * As a collector, I want to have the option to add retro gaming systems, in case I decide to collect for those systems.
 * As a user/collector, I want to have all major platforms available to me so I can add all games from my collection.
 
+* Add more stories with session implemented -----
+
 ## Features
 
 ### Existing Features
@@ -56,21 +57,29 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 * Footer
   * Provides links to the relevant social websites.
 
-* Register Account
-  * If the user decides to use the app, they're able to create an account and access all app features. All passwords are encrypted in the database, to enhance security.
-
 * Login
   * Simple form where the user can use their created credentials in the "Register Account" page to login and able to use the app.
 
-* Contact
-  * Provides a simple way for the user to be able to contact 1UP Loot. It will show a simple form where the users can submit-request for information/feedback/features. User can close the form, and return to the page and keep browsing. EmailJS was used for the email send functionality.
+* Register Account
+  * If the user decides to use the app, they're able to create an account and access all app features. All passwords are encrypted in the database, to enhance security.
 
-## Features to add
+* User Session
+  * When the user is logged in, they're able to create their collection, Add/Edit/Delete/Modify their games, in a more private and personalized way.
+  
+## Features left to implement
+
+As I develop my skills I would like to implement more features in this app like:
 
 * Detailed search system
+  * Would be useful for users with bigger collections to be able to have access to a more detailed search.
+* Upload game images
+  * Ability to upload images, instead of using URLs.
 * Wishlist
-* Forum
+  * A feature for collectors to help them find the games they don't have in their collection.
 * Share feature
+  * Ability to share their private collections to fellow collectors through the app with a public generated link with read only permissions.
+* Community/Forum
+  * A blog/forum for all users and collectors curious about the subject, can join and discuss their favourite hobby.
 
 ## Wireframes
 
@@ -83,40 +92,43 @@ Need to update this
 ## Technologies Used
 
 * **HTML**
-  * Used to create the main structure of the website.
+  * The project uses HTML to structure the DOM.
 
 * **CSS**
-  * Used to style and layout the website.
+  * Used to style webpages.
 
-* **Flask**
-  * Point of communication with mongo db
+* **[Flask](http://flask.palletsprojects.com/en/1.1.x/)**
+  * Used to generate pages, generate dynamic links, and content within the application.
 
-* **Python**
-  * Language used for back-end1
+* **[Python 3](https://www.python.org/)**
+  * Python is an interpreted, high-level, general-purpose programming language, used to integrate Flask in this project and CRUD tasks.
 
 * **[Mongodb](https://cloud.mongodb.com)**
-  * Database used for this project
+  * Database used for this project, for CRUD (create, read, update & delete) tasks.
+
+* **[PyMongo](https://api.mongodb.com/python/current)**
+  * used to connect and transfer data to and from MongoDB.
 
 * **[Materialize](https://materializecss.com/)**
-  * Framework used
+  * A responsive CSS framework based on Material Design by Google.
+
+* **[Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)**
+  * Flask extension that provides bcrypt hashing, used to encrypt all users passwords in the database.
 
 * **[JQuery](https://jquery.com)**
-  * The project uses **JQuery** to simplify DOM manipulation.
+  * The project uses JQuery to initialize Materialize CSS components
 
 * **[Font Awesome](https://fontawesome.com/)**
-  * All footer icons.
+  * Used for footer icons.
 
 * **[Materialize Icons](https://materializecss.com/icons.html)**
-  * All icons in the webpage except the footer are from Materialize
+  * All icons in the webpage except the footer which are from Font Awesome.
 
 * **[Heroku](https://www.heroku.com/)**
-  * Used to host the live website.
+  * Used to deploy the live website.
 
 * **[Google Fonts](https://fonts.google.com/)**
-  * "Covered By Your Grace" for logo and "Open Sans Condensed" with two font weight varieties for the rest of the page.
-
-* **[EmailJS](https://www.emailjs.com/)**
-  * Adds the ability to send emails from contact form.
+  * "Covered By Your Grace" for logo and "Open Sans Condensed" with two font weight variants for the rest of the page.
 
 ## Testing
 
@@ -180,14 +192,58 @@ Need to update this
 
 * **Browsers**
   * To ensure browser compatibility I've tested all features above on the following browsers:
-    * Edge
     * Chrome
     * Firefox
     * Safari
 
 ## Deployment
 
-Write deployment
+### Running this project locally
+
+In order to deploy this project locally you'll need the following:
+
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Git](https://git-scm.com/downloads)
+* [Python 3](https://www.python.org/)
+* [MongoDB Atlas](https://www.mongodb.com/) account
+* [pip](https://pypi.org/project/pip/)
+
+After you have everything installed, first clone the project from GitHub:
+
+* Go to [GitHub repository](https://github.com/Brainvibe/1UpLoot).
+* Under the repository name, click the green "Clone or download" button.
+* In the Clone with HTTPs section, copy the clone URL for the repository.
+* Open the terminal in your IDE.
+* Change the current working directory to the location where you want the cloned directory to be made.
+* Copy paste the following command:
+
+```git clone https://github.com/Legaeldan/milestone-3```
+
+The repository is now cloned.
+
+* Install the requirements needed to run the project from the terminal using the following command:
+
+```pip3 install -r requirements.txt```
+
+* After pip installs all packages, just type ```python app.py``` in the terminal and it will now run locally.
+
+### Deployment to Heroku
+
+To deploy this project to Heroku, follow these steps:
+
+* Log into [Heroku](https://dashboard.heroku.com/).
+* From the main dashboard, select the **New** dropdown, then select **Create new app**.
+* Give you app a unique name, and select the region you wish to deploy to.
+* After the app is created, select **Deploy** from the top of the page, and scroll down to **Deployment Method**.
+* Select **GitHub** as the method of deployment.
+* Log in using your **Github credentials.**
+* Select your username, and search for the reposity in the **repo-name** box.
+* Select **Connect** on the repository you wish to connect to.
+* Under **Manual deploy**, select the branch you wish to deploy, and hit **Deploy Branch**
+* After the application is built, select **Settings** from the top of the page.
+* Select **Reveal Config Vars**.
+* Add the config keys for **IP**, **PORT**, **MONGO_URI**, **MONGO_DBNAME**, and **SECRET_KEY**
+* Select **More** from the top right of the page, and select **Restart all dynos**.
 
 ## Credits
 
@@ -200,6 +256,7 @@ Write deployment
 * Auto-hide collapse menu code from [here](https://stackoverflow.com/questions/42401606/how-to-hide-collapsible-bootstrap-4-navbar-on-click).
 * Smooth Scrolling from [W3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp).
 * Webp fallback image load from [CSS-tricks](https://css-tricks.com/using-webp-images/)
+* Login system based on [Pretty Printed](https://www.youtube.com/watch?v=vVx1737auSE)
 
 As usual I want to thank my mentor *Victor Miclovich* for his great knowledge and experience with valuable feedback in our mentoring sessions.
 
