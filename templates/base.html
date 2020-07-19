@@ -40,8 +40,6 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{url_for('index')}}">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
                     <li><a href="#"><i class="material-icons left">group</i>Hi {{session['username'].title()}}!</a></li>
                     <li><a href="{{url_for('user_games', username=user)}}">Loot</a></li>            
                     <li><a href="{{url_for('logout')}}">Logout</a></li>
@@ -54,8 +52,6 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li><a href="{{url_for('index')}}">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
         <li><a href="#">Hi {{session['username'].title()}}!</a></li>
         <li><a href="{{url_for('user_games', username=user)}}">Loot</a></li>
         <li><a href="{{url_for('logout')}}">Logout</a></li>
