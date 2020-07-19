@@ -1,5 +1,9 @@
 # 1UpLoot
 
+<p align="center">
+<img width="800" height="600" src="https://github.com/Brainvibe/1UpLoot/blob/master/data/page_image/website_screenshot.png">
+</p>
+
 Live version [here](https://oneuploot.herokuapp.com/)
 
 ## Index
