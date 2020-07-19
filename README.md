@@ -334,6 +334,7 @@ To deploy this project to Heroku, follow these steps:
 * Smooth Scrolling from [W3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp).
 * Login system based on [Pretty Printed](https://www.youtube.com/watch?v=vVx1737auSE).
 * Most CRUD tasks were based on Code Institute Lessons for this module.
+* A big thanks to all students and leads from slack channel #data-centric-dev for their help and feedback.
 
 As always, I want to thank my mentor *Victor Miclovich* for his great knowledge and experience with valuable feedback in our mentoring sessions.
 
