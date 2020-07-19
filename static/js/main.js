@@ -1,4 +1,4 @@
-// Search select initilization
+// Materialize components
 
 $(document).ready(function () {
     $('select').formSelect();
@@ -8,7 +8,3 @@ $(document).ready(function () {
     $('.modal').modal();
     $('.dropdown-trigger').dropdown();
 });
-
-
-//form validation
-
