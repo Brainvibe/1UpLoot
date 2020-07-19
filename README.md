@@ -1,6 +1,6 @@
 # 1UpLoot
 
-<p align="center"> <img width="800" height="600" src="https://github.com/Brainvibe/1UpLoot/blob/master/data/page_image/website_screenshot.png"></p>
+<p align="center"> <img width="800" height="500" src="https://github.com/Brainvibe/1UpLoot/blob/master/data/page_image/site_screenshot.png"></p>
 
 Live version [here](https://oneuploot.herokuapp.com/)
 
@@ -27,7 +27,7 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 ### Who is it for
 
 * Avid Game collectors that have big collections for several game systems.
-* New collectors that are starting to collect game.
+* New collectors that are starting to collect games.
 * General users that want a place to organize and manage their games library.
 
 ### User Stories
@@ -62,6 +62,9 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 
 * Register Account
   * If the user decides to use the app, they're able to create an account and access all of the app's features. All passwords are encrypted in the database, to enhance security.
+
+* Filter
+  * User can filter their games by Platforms and Game genres, helping giving a better overview of what games they have for each platform or genre.
 
 * User Session
   * When the user is logged in, they're able to create their collection, Add/Edit/Delete/Modify their games, in a more private and personalized way.
@@ -101,7 +104,7 @@ Wireframes done with Balsamiq, available here:
   * Used to generate pages, generate dynamic links, and content within the application.
 
 * **[Python 3](https://www.python.org/)**
-  * Used to integrate Flask in this project and CRUD tasks.
+  * Used to integrate Flask in this project and all CRUD tasks.
 
 * **[Mongodb](https://cloud.mongodb.com)**
   * Database used for this project, for CRUD (create, read, update & delete) tasks.
@@ -110,7 +113,7 @@ Wireframes done with Balsamiq, available here:
   * Used to connect and transfer data to and from MongoDB.
 
 * **[Materialize](https://materializecss.com/)**
-  * Framework used in the project based on Material Design by Google.
+  * Web Framework used in the project based on Material Design by Google.
 
 * **[Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)**
   * Used to encrypt all users passwords in the database.
@@ -196,10 +199,8 @@ Wireframes done with Balsamiq, available here:
 
 ### Links
 
-* Checked all links, namely the footer social icons, to make sure they were opening on a new tab correctly.
-* Opened the app in different devices to check their responsiveness.
-
-### Login/Register testing
+* All links, were checked manually to ensure that all pages were being opened/redirected correctly.
+* All footer social icons were checked as well, to make sure they were opening on a new tab.
 
 ### Login
 
@@ -224,10 +225,10 @@ Wireframes done with Balsamiq, available here:
 * Checked if the correct navbar options were displayed correctly after logout by checking if the user was authenticated or not.
 * Tested all links after being logged out to see if everything was redirected correctly.
 
-### Search
+### Filter
 
 * Added a game for each platform and genres, to test if all searches were being done correctly.
-* Ran a search for all platforms, retro platforms and genres, to test if the games that were showing up in the results were not from other users, and only from the session user authenticated.
+* Ran a filter search for all platforms, retro platforms and genres, to test if the games that were showing up in the results were not from other users, and only from the session user authenticated.
 
 ### Loot/Game list
 
@@ -275,7 +276,9 @@ Wireframes done with Balsamiq, available here:
 
 ### Running this project locally
 
-In order to deploy this project locally you'll need the following:
+These instructions will be with [Visual Studio Code](https://code.visualstudio.com/) in mind, as the project was developed using this IDE.
+
+#### Requirements
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Git](https://git-scm.com/downloads)
@@ -330,6 +333,7 @@ To deploy this project to Heroku, follow these steps:
 
 * Smooth Scrolling from [W3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp).
 * Login system based on [Pretty Printed](https://www.youtube.com/watch?v=vVx1737auSE).
+* Most CRUD tasks were based on Code Institute Lessons for this module.
 
 As always, I want to thank my mentor *Victor Miclovich* for his great knowledge and experience with valuable feedback in our mentoring sessions.
 
