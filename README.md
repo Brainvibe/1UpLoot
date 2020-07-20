@@ -63,11 +63,14 @@ With Game Image users can add a url 200x200 hosted cover image of their choice.
 * Register Account
   * If the user decides to use the app, they're able to create an account and access all of the app's features. All passwords are encrypted in the database, to enhance security.
 
+* User Session
+  * When the user is logged in, they're able to create their collection, Add/Edit/Delete/Modify their games, in a more private and personalized way.
+
 * Filter
   * User can filter their games by Platforms and Game genres, helping giving a better overview of what games they have for each platform or genre.
 
-* User Session
-  * When the user is logged in, they're able to create their collection, Add/Edit/Delete/Modify their games, in a more private and personalized way.
+* Add/Edit/Delete tasks
+  * User can add any games they want and remove them. They're able to edit any games that were added as well.
   
 ### Features left to implement
 
@@ -183,17 +186,15 @@ Wireframes done with Balsamiq, available here:
   * Fixed by adding Metadata
 * ```Links do not have a discernible name```
   * Footer links didn't have a proper name, added ```aria-label``` to all links changed and fixed.
-* It's now scored 100.
 
 ### Best Practices
 
 * ```Includes front-end JavaScript libraries with known security vulnerabilities 3 vulnerabilities detected```
   * This was due to be using a vulnerable and outdated version of jQuery 3.2.1, updated and changed to the latest version 3.5.1
-* It's now scored 100.
 
 ### Performance
 
-* Performance locally is at 93, but due to heroku deployment, the performance took a big hit going to 74. This is all due to the third-party requests.
+* Performance locally is at 94, but due to heroku deployment, the performance took a big hit going to 74. This is all due to the third-party requests.
 
 ## Non-automated testing
 
@@ -276,7 +277,7 @@ Wireframes done with Balsamiq, available here:
 
 ### Running this project locally
 
-These instructions will be with [Visual Studio Code](https://code.visualstudio.com/) in mind, as the project was developed using this IDE.
+These instructions will be for [Visual Studio Code](https://code.visualstudio.com/), as the project was developed using this code editor.
 
 #### Requirements
 
@@ -336,7 +337,7 @@ To deploy this project to Heroku, follow these steps:
 * Most CRUD tasks were based on Code Institute Lessons for this module.
 * A big thanks to all students and leads from slack channel #data-centric-dev for their help and feedback.
 
-As always, I want to thank my mentor *Victor Miclovich* for his great knowledge and experience with valuable feedback in our mentoring sessions.
+As always, I want to thank my mentor [Victor Miclovich](https://github.com/miclovich) for his great knowledge and experience with valuable feedback in our mentoring sessions.
 
 ## Disclaimer
 
