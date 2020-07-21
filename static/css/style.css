@@ -434,3 +434,22 @@ div.row:nth-child(3)>div:nth-child(1) {
         height: 140vh;
     }
 }
+
+/*  galaxy fold landscape*/
+
+@media (min-width: 823px) and (max-width: 850px){
+    .login-register {
+        height: 120vh;
+    }
+
+    /* Games container page size */
+    .games-container {
+        height: 120vh;
+    }
+
+    /* Add edit pages container size */
+    .add-edit-game-container {
+        height: 140vh;
+    }
+}
+
